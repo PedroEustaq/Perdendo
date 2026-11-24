@@ -1,3 +1,8 @@
+<?php
+require_once "includes/banco.php";
+require_once "includes/login.php";
+require_once "includes/funcoes.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,12 +17,7 @@
     </style>
 </head>
 <body>
-<?php 
-    require_once "includes/banco.php";
-    require_once "includes/login.php";
-    require_once "includes/funcoes.php";
-    ?>
-    <div id="corpo">
+<div id="corpo">
         <?php 
         
         $u = $_POST['usuario'] ?? null;
