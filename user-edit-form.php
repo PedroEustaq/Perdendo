@@ -1,34 +1,77 @@
-<?php 
-require_once "includes/banco.php";
-$q = "
-SELECT usuario, nome, tipo
-FROM usuario
-WHERE usuario = $1
-";
-
-$busca = pg_query_params(
-    $conn,
-    $q,
-    [$_SESSION["user"]]
-);
-
-$reg = pg_fetch_object($busca);
-?>
-
 <h1 data-i18n="auth.editData">Alterar Dados</h1>
-<form action='user-edit.php' method='post'>
-<table id="tableedit">
-    <tr><td> <h5 data-i18n="auth.username">Usuário</h5>
-        <td> <input type='text' name='usuario' id='usuario' value="<?php echo $reg->usuario?>" >
-        <tr><td> <h5 data-i18n="auth.name">Nome</h5>
-            <td><input type='text' name='nome' id='nome' value="<?php echo $reg->nome?>">
-            <tr><td> <h5 data-i18n="auth.type">Tipo</h5>
-            <td><input type='text' name='tipo' id='tipo' readonly value="<?php echo $reg->tipo?>">
-            <tr><td> <h5 data-i18n="auth.password">Senha</h5>
-            <td><input type='text' name='senha1' id='senha1' >
-            <tr><td> <h5 data-i18n="auth.confirmPassword">Confirme Senha</h5>
-            <td><input type='text' name='senha2' id='senha2' >
-            <input type='submit' value='Salvar' data-i18n-value='auth.save'>
-</table>
 
+<form action="user-edit.php" method="post" id="formEditarConta">
+    <table id="tableedit">
+        <tr>
+            <td><label for="usuario" data-i18n="auth.username">Usuário</label></td>
+            <td>
+                <input
+                    type="text"
+                    name="usuario"
+                    id="usuario"
+                    value="<?= htmlspecialchars($reg['usuario'], ENT_QUOTES, 'UTF-8') ?>"
+                    maxlength="30"
+                    autocomplete="username"
+                    required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="nome" data-i18n="auth.name">Nome</label></td>
+            <td>
+                <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    value="<?= htmlspecialchars($reg['nome'], ENT_QUOTES, 'UTF-8') ?>"
+                    maxlength="60"
+                    autocomplete="name"
+                    required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="tipo" data-i18n="auth.type">Tipo</label></td>
+            <td>
+                <input
+                    type="text"
+                    id="tipo"
+                    value="<?= htmlspecialchars($reg['tipo'], ENT_QUOTES, 'UTF-8') ?>"
+                    readonly
+                    aria-readonly="true">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="senha1" data-i18n="auth.password">Nova senha</label></td>
+            <td>
+                <input
+                    type="password"
+                    name="senha1"
+                    id="senha1"
+                    maxlength="72"
+                    autocomplete="new-password"
+                    required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="senha2" data-i18n="auth.confirmPassword">Confirme a nova senha</label></td>
+            <td>
+                <input
+                    type="password"
+                    name="senha2"
+                    id="senha2"
+                    maxlength="72"
+                    autocomplete="new-password"
+                    required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <small>Para salvar, preencha os dois campos com a nova senha. Senha vazia não é aceita.</small>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" data-i18n="auth.save">Salvar</button>
+            </td>
+        </tr>
+    </table>
 </form>
