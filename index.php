@@ -411,21 +411,25 @@ ORDER BY j.nome
 
     });
 
-    // Campo de pesquisa
-    document.getElementById("pesquisa").addEventListener("keydown", function(e) {
+    // Campo de pesquisa do cabeçalho
+    const campoPesquisa = document.querySelector(".Direito .pesquisa input");
 
-        if (e.key === "Enter") {
+    if (campoPesquisa) {
+        campoPesquisa.addEventListener("keydown", function(e) {
 
-            e.preventDefault();
+            if (e.key === "Enter") {
 
-            const texto = this.value.trim();
+                e.preventDefault();
 
-            window.location.href =
-                "market.php?pesquisa=" + encodeURIComponent(texto);
+                const texto = this.value.trim();
 
-        }
+                window.location.href =
+                    "market.php?pesquisa=" + encodeURIComponent(texto);
 
-    });
+            }
+
+        });
+    }
 </script>
 <script src="script.js"></script>
 
