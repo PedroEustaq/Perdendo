@@ -19,15 +19,7 @@ if (!$conn) {
     die("Erro na conexão.");
 }
 
-$busca = pg_query($conn, "SELECT * FROM generos");
 
-if (!$busca) {
-    echo "Falha na busca";
-} else {
-
-    
-
-}
 
 function thumb($arq)
 {
