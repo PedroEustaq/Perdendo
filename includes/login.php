@@ -35,7 +35,9 @@ function autenticar($usuario, $senha)
     return true;
 }
 
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 function logado()
 {
