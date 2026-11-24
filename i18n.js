@@ -39,6 +39,8 @@
             "catalog.minimumRating": "Nota mínima",
             "catalog.publisher": "Produtora",
             "catalog.genre": "Gênero",
+            "catalog.noResults": "Nenhum jogo encontrado com esses filtros.",
+            "catalog.errorLoading": "Não foi possível atualizar o catálogo. Tente novamente.",
 
             "common.allFemale": "Todas",
             "common.allMale": "Todos",
@@ -128,6 +130,8 @@
             "catalog.minimumRating": "Minimum rating",
             "catalog.publisher": "Publisher",
             "catalog.genre": "Genre",
+            "catalog.noResults": "No games found with these filters.",
+            "catalog.errorLoading": "The catalog could not be updated. Please try again.",
 
             "common.allFemale": "All",
             "common.allMale": "All",
@@ -355,6 +359,9 @@
 
         applyLanguage();
     }
+
+    // Permite reaplicar as traduções em cards inseridos por buscas sem recarregar a página.
+    window.perdendoApplyLanguage = applyLanguage;
 
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", init, { once: true });

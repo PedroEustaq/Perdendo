@@ -1,7 +1,11 @@
 <?php
-
-
 require_once "includes/funcoes.php";
+
+$buscaCabecalho = (
+    basename($_SERVER["SCRIPT_NAME"] ?? "") === "market.php"
+    && isset($_GET["pesquisa"])
+    && is_string($_GET["pesquisa"])
+) ? $_GET["pesquisa"] : "";
 ?>
 
 <header class="cabecalho">
@@ -26,13 +30,22 @@ require_once "includes/funcoes.php";
 
     <div class="Direito">
 
-        <div class="pesquisa">
+        <form class="pesquisa" id="buscaCabecalho" action="market.php" method="GET" role="search">
 
-            <img src="svg/LoopaCinza.svg" alt="">
+            <button type="submit" class="pesquisa__botao" aria-label="Pesquisar" title="Pesquisar">
+                <img src="svg/LoopaCinza.svg" alt="">
+            </button>
 
-            <input type="text" placeholder="Pesquisar" data-i18n-placeholder="search.placeholder">
+            <input
+                id="buscaCabecalhoInput"
+                type="search"
+                name="pesquisa"
+                placeholder="Pesquisar"
+                data-i18n-placeholder="search.placeholder"
+                autocomplete="off"
+                value="<?= htmlspecialchars($buscaCabecalho, ENT_QUOTES, "UTF-8") ?>">
 
-        </div>
+        </form>
 
         <div class="login">
 
@@ -68,8 +81,6 @@ require_once "includes/funcoes.php";
 
             <?php } else { ?>
 
-            
-
                 <a href="user-login.php">
                     <span data-i18n="user.login">Iniciar Sessão</span>
                 </a>
@@ -78,7 +89,7 @@ require_once "includes/funcoes.php";
 
         </div>
 
-            <button type="button" class="idioma-toggle" id="idiomaToggle" aria-label="Mudar para inglês">
+        <button type="button" class="idioma-toggle" id="idiomaToggle" aria-label="Mudar para inglês">
             <span class="idioma-toggle__code" aria-hidden="true">EN</span>
             <span class="idioma-toggle__text">English</span>
         </button>

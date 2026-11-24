@@ -432,3 +432,63 @@ height: 100%;
     width: 16px;
     height: 16px;
 }
+
+/* Busca do cabeçalho: ícone clicável e formulário sem estilos nativos. */
+.pesquisa__botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.pesquisa__botao img {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.pesquisa__botao:focus-visible {
+    outline: 2px solid #e60012;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.campoBusca__botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.campoBusca__botao img {
+    display: block;
+}
+
+.catalogo-vazio,
+.catalogo-erro {
+    grid-column: 1 / -1;
+    padding: 32px 20px;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    background: #fff;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.catalogo-erro {
+    color: #b42318;
+}
+
+#listaJogos[aria-busy="true"] {
+    opacity: .65;
+    transition: opacity .15s ease;
+}

@@ -65,7 +65,6 @@
         </tr>
         <tr>
             <td colspan="2">
-                <small>Para salvar, preencha os dois campos com a nova senha. Senha vazia não é aceita.</small>
             </td>
         </tr>
         <tr>
