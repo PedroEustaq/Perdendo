@@ -38,4 +38,3 @@ function thumb($arq)
 
     return $caminho;
 }
-?>

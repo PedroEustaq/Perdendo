@@ -1,3 +1,11 @@
+<?php
+require_once "includes/banco.php";
+require_once "includes/login.php";
+require_once "includes/funcoes.php";
+
+// Encerra a sessão antes de qualquer conteúdo HTML ser enviado.
+logout();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,18 +16,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<?php 
-    require_once "includes/banco.php";
-    require_once "includes/login.php";
-    require_once "includes/funcoes.php";
-    ?>
     <div id="corpo">
-        <?php 
-        
-        
-        logout();
+        <?php
         echo msg_sucesso("<span data-i18n='auth.logoutSuccess'>Logout bem sucedido</span>");
         ?>
-<script src="i18n.js" defer></script>
+    </div>
+
+    <script src="i18n.js" defer></script>
 </body>
 </html>
