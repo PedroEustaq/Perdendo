@@ -8,7 +8,7 @@ require_once "includes/login.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central | Perdendo</title>
-    <link rel="icon" href="./imgDeco/favi.png" type="image/png">
+    <link rel="icon" href="./imgDeco/favi.webp" type="image/webp">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cabecalho.css">
     <link rel="stylesheet" href="banner.css">
@@ -191,26 +191,26 @@ LIMIT 5
 
         <div class="giftWall">
 
-            <img src="imgDeco/giftNintendo.png" alt="">
+            <img src="imgDeco/giftNintendo.webp" alt="">
             <img src="imgDeco/giftLOL.webp" alt="">
-            <img src="imgDeco/giftPlaystore.png" alt="">
-            <img src="imgDeco/giftRoblox.png" alt="">
-            <img src="imgDeco/giftValorant.png" alt="">
-            <img src="imgDeco/giftXbox.png" alt="">
+            <img src="imgDeco/giftPlaystore.webp" alt="">
+            <img src="imgDeco/giftRoblox.webp" alt="">
+            <img src="imgDeco/giftValorant.webp" alt="">
+            <img src="imgDeco/giftXbox.webp" alt="">
 
             <img src="imgDeco/giftSTEAM.webp" alt="">
-            <img src="imgDeco/giftPlaystation.png" alt="">
-            <img src="imgDeco/giftVBUCKS.jpg" alt="">
-            <img src="imgDeco/giftRoblox.png" alt="">
-            <img src="imgDeco/giftValorant.png" alt="">
-            <img src="imgDeco/giftXbox.png" alt="">
+            <img src="imgDeco/giftPlaystation.webp" alt="">
+            <img src="imgDeco/giftVBUCKS.webp" alt="">
+            <img src="imgDeco/giftRoblox.webp" alt="">
+            <img src="imgDeco/giftValorant.webp" alt="">
+            <img src="imgDeco/giftXbox.webp" alt="">
 
-            <img src="imgDeco/giftNintendo.png" alt="">
-            <img src="imgDeco/giftPlaystation.png" alt="">
-            <img src="imgDeco/giftVBUCKS.jpg" alt="">
-            <img src="imgDeco/giftRoblox.png" alt="">
-            <img src="imgDeco/giftValorant.png" alt="">
-            <img src="imgDeco/giftXbox.png" alt="">
+            <img src="imgDeco/giftNintendo.webp" alt="">
+            <img src="imgDeco/giftPlaystation.webp" alt="">
+            <img src="imgDeco/giftVBUCKS.webp" alt="">
+            <img src="imgDeco/giftRoblox.webp" alt="">
+            <img src="imgDeco/giftValorant.webp" alt="">
+            <img src="imgDeco/giftXbox.webp" alt="">
 
         </div>
 

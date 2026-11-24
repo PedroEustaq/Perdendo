@@ -10,7 +10,7 @@ require_once "reset-banco.php";
     <div class="menu-esquerda">
 
         <div class="logo">
-            <img src="imgDeco/PERDENDOLogo.png" alt="">
+            <img src="imgDeco/PERDENDOLogo.webp" alt="">
         </div>
 
         <a href="index.php">
