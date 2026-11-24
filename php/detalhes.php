@@ -1,7 +1,7 @@
 <?php
 
-require_once "includes/banco.php";
-require_once "includes/login.php";
+require_once __DIR__ . "/includes/banco.php";
+require_once __DIR__ . "/includes/login.php";
 $id = $_GET['id'] ?? null;
 
 
@@ -117,9 +117,9 @@ $editar = isset($_GET["editar"]) && editor();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $nome ?> | Perdendo</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="sobre.css">
-    <link rel="stylesheet" href="cabecalho.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <link rel="stylesheet" href="/css/cabecalho.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -131,7 +131,7 @@ $editar = isset($_GET["editar"]) && editor();
 
 
 
-    <?php require_once "cabecalho.php"; ?>
+    <?php require_once __DIR__ . "/cabecalho.php"; ?>
     <main class="produto-page">
         <form method="post">
             <section class="produto-card">

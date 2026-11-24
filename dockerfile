@@ -11,6 +11,7 @@ COPY . /var/www/html/
 
 # Script que reconstrui o banco de demonstracao uma vez antes do Apache iniciar.
 COPY docker-start.sh /usr/local/bin/docker-start.sh
+COPY apache-vhost.conf /etc/apache2/sites-available/000-default.conf
 RUN chmod +x /usr/local/bin/docker-start.sh \
     && chown -R www-data:www-data /var/www/html
 

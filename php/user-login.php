@@ -1,8 +1,8 @@
 <?php 
 
-    require_once "includes/banco.php";
-    require_once "includes/login.php";
-    require_once "includes/funcoes.php";
+    require_once __DIR__ . "/includes/banco.php";
+    require_once __DIR__ . "/includes/login.php";
+    require_once __DIR__ . "/includes/funcoes.php";
 
 ?>
 
@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="/css/login.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Inter:opsz@14..32&family=Karla&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
     </style>
@@ -46,7 +46,7 @@
         
 
         if (is_null($u) || is_null($s)) {
-            require_once "user-login-form.php";
+            require_once __DIR__ . "/user-login-form.php";
         } else {
             $q = "SELECT usuario, nome, senha, tipo FROM usuario WHERE usuario = '$u'";
             

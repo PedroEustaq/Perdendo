@@ -1,5 +1,5 @@
-<?php require_once "includes/banco.php";
-require_once "includes/login.php";
+<?php require_once __DIR__ . "/includes/banco.php";
+require_once __DIR__ . "/includes/login.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +9,12 @@ require_once "includes/login.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central | Perdendo</title>
     <link rel="icon" href="./imgDeco/favi.webp" type="image/webp">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cabecalho.css">
-    <link rel="stylesheet" href="banner.css">
-    <link rel="stylesheet" href="destaque.css">
-    <link rel="stylesheet" href="giftcards.css">
-    <link rel="stylesheet" href="market.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cabecalho.css">
+    <link rel="stylesheet" href="/css/banner.css">
+    <link rel="stylesheet" href="/css/destaque.css">
+    <link rel="stylesheet" href="/css/giftcards.css">
+    <link rel="stylesheet" href="/css/market.css">
 
     <meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito.">
 
@@ -27,7 +27,7 @@ require_once "includes/login.php";
 <body>
 
 
-    <?php require_once "cabecalho.php"; ?>
+    <?php require_once __DIR__ . "/cabecalho.php"; ?>
 
 
     <?php
@@ -370,7 +370,7 @@ ORDER BY j.nome
 
 
 </body>
-<?php require_once 'rodape.php';
+<?php require_once __DIR__ . "/rodape.php";
 
 
 

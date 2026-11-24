@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>???</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="user-new.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/user-new.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Inter:opsz@14..32&family=Karla&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
     </style>
@@ -15,9 +15,9 @@
 <body>
     <?php
 
-    require_once "includes/banco.php";
-    require_once "includes/login.php";
-    require_once "includes/funcoes.php";
+    require_once __DIR__ . "/includes/banco.php";
+    require_once __DIR__ . "/includes/login.php";
+    require_once __DIR__ . "/includes/funcoes.php";
 
 
     if (!admin()) {
@@ -34,7 +34,7 @@
             echo msg_erro("Você nao é ADM!");
         } else {
             if (!isset($_POST['usuario'])) {
-                require "user-new-form.php";
+                require __DIR__ . "/user-new-form.php";
             } else {
                 $usuario = $_POST['usuario'] ?? null;
                 $nome = $_POST['nome'] ?? null;

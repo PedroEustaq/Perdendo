@@ -1,6 +1,6 @@
 <?php
-require_once "includes/banco.php";
-require_once "includes/login.php";
+require_once __DIR__ . "/includes/banco.php";
+require_once __DIR__ . "/includes/login.php";
 
 $listaGeneros = pg_query($conn, "
     SELECT cod, genero
@@ -24,16 +24,16 @@ $listaProdutoras = pg_query($conn, "
 
     <title>Catálogo | Perdendo</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cabecalho.css">
-    <link rel="stylesheet" href="market.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cabecalho.css">
+    <link rel="stylesheet" href="/css/market.css">
 <meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito.">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
-    <?php require_once "cabecalho.php"; ?>
+    <?php require_once __DIR__ . "/cabecalho.php"; ?>
     <main class="Market">
 
         <aside class="filtros">

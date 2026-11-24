@@ -1,5 +1,5 @@
 <?php 
-require_once "includes/banco.php";
+require_once __DIR__ . "/includes/banco.php";
 $q = "
 SELECT usuario, nome, tipo
 FROM usuario
