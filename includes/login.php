@@ -28,6 +28,7 @@ function autenticar($usuario, $senha)
     session_regenerate_id(true);
 
     $_SESSION["usuario"] = $dados["usuario"];
+    $_SESSION["user"] = $dados["usuario"];
     $_SESSION["nome"] = $dados["nome"];
     $_SESSION["tipo"] = $dados["tipo"];
 

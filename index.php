@@ -29,6 +29,13 @@ require_once "includes/login.php";
 
     <?php require_once "cabecalho.php"; ?>
 
+<?php
+if (($_SESSION["flash_message"] ?? null) === "login_success") {
+    unset($_SESSION["flash_message"]);
+    echo msg_sucesso("<span data-i18n='auth.loginSuccess'>Login realizado com sucesso</span>");
+}
+?>
+
 
     <?php
 
