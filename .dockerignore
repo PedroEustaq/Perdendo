@@ -1,3 +1,10 @@
 .git
 .vscode
-node_modules
+node_modules/
+FAZENDOFRONTENDDALOJADEJOGO/
+*.zip
+sitejogos.sql
+ultimo_reset.txt
+.env
+.env.*
+imgDeco/Group 1.webp

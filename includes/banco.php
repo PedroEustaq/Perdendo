@@ -13,9 +13,16 @@ $conn = pg_connect("
     dbname=$dbname
     user=$user
     password=$password
+    connect_timeout=10
 ");
 
 if (!$conn) {
+    if (PHP_SAPI === "cli") {
+        fwrite(STDERR, "Falha ao conectar ao banco de dados.\n");
+        exit(1);
+    }
+
+    http_response_code(500);
     die("Erro na conexão.");
 }
 
