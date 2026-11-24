@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/includes/banco.php";
-require_once __DIR__ . "/includes/login.php";
+require_once "includes/banco.php";
+require_once "includes/login.php";
 
 $listaGeneros = pg_query($conn, "
     SELECT cod, genero
@@ -24,16 +24,16 @@ $listaProdutoras = pg_query($conn, "
 
     <title>Catálogo | Perdendo</title>
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/cabecalho.css">
-    <link rel="stylesheet" href="/css/market.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cabecalho.css">
+    <link rel="stylesheet" href="market.css">
 <meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito.">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
-    <?php require_once __DIR__ . "/cabecalho.php"; ?>
+    <?php require_once "cabecalho.php"; ?>
     <main class="Market">
 
         <aside class="filtros">
@@ -179,6 +179,29 @@ ORDER BY j.nome
             // Contador dos cards exibidos
             $contador = 0;
 
+            function localizarImagem($pasta, $nomeArquivo)
+            {
+                $extensoes = [
+                    "png",
+                    "jpg",
+                    "jpeg",
+                    "webp",
+                    "avif",
+                    "gif"
+                ];
+
+                foreach ($extensoes as $ext) {
+
+                    $arquivo = "$pasta/$nomeArquivo.$ext";
+
+                    if (file_exists($arquivo)) {
+                        return $arquivo;
+                    }
+                }
+
+                return null;
+            }
+
             while ($jogo = pg_fetch_assoc($busca)) {
 
                 // Wide, Normal, Normal, Wide, Normal, Normal...
@@ -241,7 +264,7 @@ ORDER BY j.nome
     </main>
 
     <?php
-    require_once __DIR__ . "/rodape.php";
+    require_once "rodape.php";
     ?>
 
     <script src="script.js"></script>

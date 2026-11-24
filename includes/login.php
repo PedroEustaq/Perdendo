@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/funcoes.php";
-require_once __DIR__ . "/banco.php";
+require_once "funcoes.php";
+require_once "banco.php";
 
 
 function autenticar($usuario, $senha)

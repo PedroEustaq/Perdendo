@@ -4,7 +4,7 @@ set -eu
 ATTEMPT=1
 MAX_ATTEMPTS=5
 
-while ! php /var/www/html/php/reset-banco.php; do
+while ! php /var/www/html/reset-banco.php; do
     if [ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]; then
         echo "[startup] Database reset failed after $MAX_ATTEMPTS attempts. Apache will not start." >&2
         exit 1
