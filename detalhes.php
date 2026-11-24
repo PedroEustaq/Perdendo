@@ -110,7 +110,7 @@ $editar = isset($_GET["editar"]) && editor();
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -140,11 +140,11 @@ $editar = isset($_GET["editar"]) && editor();
 
                     <nav class="breadcrumb">
 
-                        <a href="index.php">Central</a>
+                        <a href="index.php" data-i18n="nav.home">Central</a>
 
                         <span class="material-icons">chevron_right</span>
 
-                        <a href="market.php">Catálogo</a>
+                        <a href="market.php" data-i18n="nav.catalog">Catálogo</a>
 
                         <span class="material-icons">chevron_right</span>
 
@@ -220,7 +220,7 @@ $editar = isset($_GET["editar"]) && editor();
 
                                 <button type="submit">
 
-                                    Salvar Alterações
+                                    <span data-i18n="details.saveChanges">Salvar Alterações</span>
 
                                 </button>
 
@@ -289,30 +289,30 @@ $editar = isset($_GET["editar"]) && editor();
 
                     <?php } else { ?>
 
-                        <p class="produto-descricao">
+                        <p class="produto-descricao" data-i18n-database="description" data-i18n-game="<?= htmlspecialchars($nome, ENT_QUOTES, 'UTF-8') ?>">
                             <?= htmlspecialchars($descricao) ?>
                         </p>
 
                     <?php } ?>
 
                     <div class="produto-acoes">
-                        <a href="#" class="btn-principal">Botar no carrinho</a>
-                        <a href="#" class="btn-secundario">Embrulhar para presente</a>
+                        <a href="#" class="btn-principal" data-i18n="details.addToCart">Botar no carrinho</a>
+                        <a href="#" class="btn-secundario" data-i18n="details.giftWrap">Embrulhar para presente</a>
                     </div>
 
                     <div class="produto-dados">
                         <div>
-                            <span>Gênero</span>
-                            <strong><?= $nome_genero ?></strong>
+                            <span data-i18n="details.genre">Gênero</span>
+                            <strong data-i18n-database="genre"><?= $nome_genero ?></strong>
                         </div>
 
                         <div>
-                            <span>Plataforma</span>
+                            <span data-i18n="details.platform">Plataforma</span>
                             <strong><?= $nome_plataforma ?></strong>
                         </div>
 
                         <div>
-                            <span>Fornecedor</span>
+                            <span data-i18n="details.publisher">Fornecedor</span>
                             <strong><?= $nome_produtora ?></strong>
                         </div>
 

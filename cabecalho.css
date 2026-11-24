@@ -233,3 +233,82 @@ header a:hover {
     color: #666;
     font-family: "Inter", "Segoe UI", sans-serif;
 }
+/* ================= LANGUAGE SWITCH ================= */
+
+.idioma-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 7px 12px;
+    border: 1px solid #dedede;
+    border-radius: 999px;
+    background: #fff;
+    color: #303030;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s, border-color .2s, color .2s;
+}
+
+.idioma-toggle:hover {
+    background: #f3f3f3;
+    border-color: #cfcfcf;
+    color: #e60012;
+}
+
+.idioma-toggle__code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    height: 23px;
+    padding: 0 5px;
+    border-radius: 7px;
+    background: #e60012;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: .3px;
+}
+
+@media (max-width: 900px) {
+    .Direito {
+        gap: 9px;
+    }
+
+    .pesquisa > input {
+        width: 115px;
+    }
+
+    .login {
+        gap: 8px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 680px) {
+    .idioma-toggle__text {
+        display: none;
+    }
+
+    .idioma-toggle {
+        padding: 6px 8px;
+    }
+
+    .pesquisa > input {
+        width: 75px;
+    }
+
+    .Direito {
+        gap: 6px;
+    }
+
+    header a {
+        gap: 5px;
+        padding: 8px 7px;
+        font-size: 12px;
+    }
+}

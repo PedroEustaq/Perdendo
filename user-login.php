@@ -7,12 +7,12 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title data-i18n="page.loginTitle">Login</title>
     <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="login.css">
     <style>
@@ -54,7 +54,7 @@
             if ($busca && pg_num_rows($busca) > 0) { // Se encontrou o usuário
                 $reg = pg_fetch_object($busca);
                 if (testarHash($s, $reg->senha)) { // Se a senha estiver correta
-                    echo msg_sucesso("Deu certin");
+                    echo msg_sucesso("<span data-i18n='auth.loginSuccess'>Deu certin</span>");
             
                     $_SESSION['user'] = $reg->usuario;
                     $_SESSION['nome'] = $reg->nome;
@@ -62,19 +62,20 @@
                     header("Location: index.php");
 exit;
                 } else {
-                    echo msg_erro("Opa... deu errado"); // Senha incorreta
+                    echo msg_erro("<span data-i18n='auth.loginError'>Opa... deu errado</span>"); // Senha incorreta
                 }
             } else {
-                echo msg_erro("Opa... deu errado"); // Usuário não encontrado
+                echo msg_erro("<span data-i18n='auth.loginError'>Opa... deu errado</span>"); // Usuário não encontrado
             }
         }
         ?>
     </div>
+<script src="i18n.js" defer></script>
 </body>
 <div class="login-aviso">
-    🎮 Acesso Demo<br>
-    <strong>Usuário:</strong> admin<br>
-    <strong>Senha:</strong> admin
+    🎮 <span data-i18n="auth.demoAccess">Acesso Demo</span><br>
+    <strong data-i18n="auth.username">Usuário:</strong> admin<br>
+    <strong data-i18n="auth.password">Senha:</strong> admin
 </div>
 
 </html>

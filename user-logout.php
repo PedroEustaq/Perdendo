@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???</title>
+    <title data-i18n="user.logout">Sair</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -18,7 +18,8 @@
         
         
         logout();
-        echo msg_sucesso("Logout bem sucedido");
+        echo msg_sucesso("<span data-i18n='auth.logoutSuccess'>Logout bem sucedido</span>");
         ?>
+<script src="i18n.js" defer></script>
 </body>
 </html>

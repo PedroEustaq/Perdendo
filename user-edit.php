@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???</title>
+    <title data-i18n="page.editUserTitle">Meus dados | Perdendo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="user-edit.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,7 +27,7 @@
         $s2 = $_POST['senha2'] ?? null;
 
       if (!logado()) {
-            echo msg_erro("Eita! essa area é restrita");
+            echo msg_erro("<span data-i18n='auth.restricted'>Eita! essa area é restrita</span>");
         } else {
             if (!isset($_POST['usuario'])) {
                 include 'user-edit-form.php';
@@ -55,7 +55,7 @@ $busca = pg_query_params(
                     $_SESSION["user"] = $u;
                     logout();
                 } else {
-                    echo msg_erro("As senhas não coincidem");
+                    echo msg_erro("<span data-i18n='auth.passwordMismatch'>As senhas não coincidem</span>");
                 }
         }
     }
@@ -64,5 +64,6 @@ $busca = pg_query_params(
 
 
 </div>
+<script src="i18n.js" defer></script>
 </body>
 </html>

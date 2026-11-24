@@ -2,12 +2,12 @@
 require_once "includes/login.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central | Perdendo</title>
+    <title data-i18n="page.homeTitle">Central | Perdendo</title>
     <link rel="icon" href="./imgDeco/favi.webp" type="image/webp">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cabecalho.css">
@@ -16,7 +16,7 @@ require_once "includes/login.php";
     <link rel="stylesheet" href="giftcards.css">
     <link rel="stylesheet" href="market.css">
 
-    <meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito.">
+    <meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito." data-i18n-content="page.description">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
@@ -100,7 +100,7 @@ LIMIT $quantidadeBanner
     </section>
 
     <div class="EmDestaque">
-        <h1>Em Destaque</h1>
+        <h1 data-i18n="home.featured">Em Destaque</h1>
 
         <div class="linhaJogos">
 
@@ -159,7 +159,7 @@ LIMIT 5
 
                             <div class="DataProd">
                                 <p><?= htmlspecialchars($jogo['produtora']) ?></p>
-                                <p><?= htmlspecialchars($jogo['genero']) ?></p>
+                                <p><span data-i18n-database="genre"><?= htmlspecialchars($jogo['genero']) ?></span></p>
                             </div>
 
                         </div>
@@ -178,14 +178,14 @@ LIMIT 5
         <div class="giftText">
             <span class="giftTag"><img src="svg/EstrelaBranca.svg" alt=""> GIFT CARDS</span>
 
-            <h2>O presente perfeito para qualquer jogador.</h2>
+            <h2 data-i18n="home.giftTitle">O presente perfeito para qualquer jogador.</h2>
 
             <p>
-                Compre em poucos segundos e receba seu código rapidamente.
+                <span data-i18n="home.giftDescription">Compre em poucos segundos e receba seu código rapidamente.</span>
             </p>
 
             <div class="giftButtons">
-                <button class="btnPrincipal" onclick="window.alert('Estamos re-abastecendo nosso estoque, volte mais tarde!')">Ver Gift Cards</button>
+                <button class="btnPrincipal" data-i18n-alert="home.giftAlert" data-i18n="home.giftButton">Ver Gift Cards</button>
             </div>
         </div>
 
@@ -219,7 +219,7 @@ LIMIT 5
 
         <aside class="filtros --promocional" onclick="window.location.href='market.php'">
 
-          <h2>Confira a loja completa!</h2>
+          <h2 data-i18n="home.shopMore">Confira a loja completa!</h2>
 
             <div class="promo-icons">
                 <img src="./svg/PlayBtn.svg" alt="">
@@ -346,7 +346,7 @@ ORDER BY j.nome
 
                                 </p>
                                 <p>
-                                    <?= htmlspecialchars($jogo['genero']) ?>
+                                    <span data-i18n-database="genre"><?= htmlspecialchars($jogo['genero']) ?></span>
                                 </p>
                             </div>
                         </div>

@@ -15,19 +15,19 @@ $listaProdutoras = pg_query($conn, "
 ");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Catálogo | Perdendo</title>
+    <title data-i18n="page.catalogTitle">Catálogo | Perdendo</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cabecalho.css">
     <link rel="stylesheet" href="market.css">
-<meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito.">
+<meta name="description" content="Descubra os melhores jogos para PC, PlayStation, Xbox e Nintendo. Explore lançamentos, promoções, avaliações e encontre seu próximo game favorito." data-i18n-content="page.description">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -38,7 +38,7 @@ $listaProdutoras = pg_query($conn, "
 
         <aside class="filtros">
 
-            <h2>Filtros</h2>
+            <h2 data-i18n="catalog.filters">Filtros</h2>
             <form id="formFiltros" method="GET">
                 <div class="campoBusca">
                     <img src="svg/LoopaCinza.svg">
@@ -47,12 +47,12 @@ $listaProdutoras = pg_query($conn, "
                         id="pesquisa"
                         type="text"
                         name="pesquisa"
-                        placeholder="Pesquisar jogo..."
+                        placeholder="Pesquisar jogo..." data-i18n-placeholder="catalog.searchPlaceholder"
                         autocomplete="off"
                         value="<?= htmlspecialchars($_GET['pesquisa'] ?? '') ?>">
                 </div>
 
-                <h3>Nota mínima</h3>
+                <h3 data-i18n="catalog.minimumRating">Nota mínima</h3>
 
                 <input
                     type="range"
@@ -67,11 +67,11 @@ $listaProdutoras = pg_query($conn, "
                     <img src="svg/starYellow.svg" alt=""> <span id="notaValor"><?= htmlspecialchars($_GET['nota'] ?? '0') ?></span>
                 </p>
 
-                <h3>Produtora</h3>
+                <h3 data-i18n="catalog.publisher">Produtora</h3>
 
                 <select name="produtora">
 
-                    <option value="">Todas</option>
+                    <option value="" data-i18n="common.allFemale">Todas</option>
 
                     <?php while ($p = pg_fetch_assoc($listaProdutoras)): ?>
 
@@ -87,16 +87,16 @@ $listaProdutoras = pg_query($conn, "
 
                 </select>
 
-                <h3>Gênero</h3>
+                <h3 data-i18n="catalog.genre">Gênero</h3>
 
                 <select name="genero">
 
-                    <option value="">Todos</option>
+                    <option value="" data-i18n="common.allMale">Todos</option>
 
                     <?php while ($g = pg_fetch_assoc($listaGeneros)): ?>
 
                         <option
-                            value="<?= $g['cod'] ?>"
+                            value="<?= $g['cod'] ?>" data-i18n-database="genre"
                             <?= ($_GET['genero'] ?? '') == $g['cod'] ? 'selected' : '' ?>>
 
                             <?= htmlspecialchars($g['genero']) ?>
@@ -241,7 +241,7 @@ ORDER BY j.nome
 
                                 </p>
                                 <p>
-                                    <?= htmlspecialchars($jogo['genero']) ?>
+                                    <span data-i18n-database="genre"><?= htmlspecialchars($jogo['genero']) ?></span>
                                 </p>
                             </div>
                         </div>

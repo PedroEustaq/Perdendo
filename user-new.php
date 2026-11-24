@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???</title>
+    <title data-i18n="page.newUserTitle">Novo usuário | Perdendo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="user-new.css">
     <style>
@@ -31,7 +31,7 @@
     <div id="corpo">
         <?php
         if (!admin()) {
-            echo msg_erro("Você nao é ADM!");
+            echo msg_erro("<span data-i18n='auth.adminOnly'>Você nao é ADM!</span>");
         } else {
             if (!isset($_POST['usuario'])) {
                 require "user-new-form.php";
@@ -44,10 +44,10 @@
 
                 if ($senha1 === $senha2) {
                     if (empty($usuario) || empty($nome) || empty($senha1) || empty($senha2)) {
-                        echo "todos os dados sao obrigatorios";
+                        echo "<span data-i18n='auth.requiredFields'>todos os dados sao obrigatorios</span>";
                     } else {
 
-                        echo msg_sucesso("tudo certo para gravar");
+                        echo msg_sucesso("<span data-i18n='auth.readyToSave'>tudo certo para gravar</span>");
                         $senhaH = gerarHash($senha1);
                         $q = "INSERT INTO usuario (usuario,nome,senha,tipo) VALUES ('$usuario','$nome','$senhaH','$tipo')";
                         if (pg_query($conn, $q)) {
@@ -57,7 +57,7 @@
                         }
                     }
                 } else {
-                    echo msg_erro("senhas estão erradas!");
+                    echo msg_erro("<span data-i18n='auth.passwordsWrong'>senhas estão erradas!</span>");
                 }
             }
         }
@@ -65,6 +65,7 @@
 
         ?>
     </div>
+<script src="i18n.js" defer></script>
 </body>
 
 </html>
