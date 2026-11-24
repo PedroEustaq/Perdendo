@@ -146,9 +146,9 @@ LIMIT 5
 
                             <div class="NomeNota">
 
-                                <h3 class="NomeJogo">
+                                <h2 class="NomeJogo">
                                     <?= htmlspecialchars($jogo['nome']) ?>
-                                </h3>
+                                </h2>
 
                                 <div class="Nota">
                                     <img src="svg/starYellow.svg" alt="Estrela amarela">
@@ -178,7 +178,7 @@ LIMIT 5
         <div class="giftText">
             <span class="giftTag"><img src="svg/EstrelaBranca.svg" alt=""> GIFT CARDS</span>
 
-            <h1>O presente perfeito para qualquer jogador.</h1>
+            <h2>O presente perfeito para qualquer jogador.</h2>
 
             <p>
                 Compre em poucos segundos e receba seu código rapidamente.
@@ -219,7 +219,7 @@ LIMIT 5
 
         <aside class="filtros --promocional" onclick="window.location.href='market.php'">
 
-          <h1>Confira a loja completa!</h1>
+          <h2>Confira a loja completa!</h2>
 
             <div class="promo-icons">
                 <img src="./svg/PlayBtn.svg" alt="">
