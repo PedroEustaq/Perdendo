@@ -63,4 +63,3 @@ perguntas.forEach((item) => {
     });
 
 });
-
