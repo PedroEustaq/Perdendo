@@ -179,29 +179,6 @@ ORDER BY j.nome
             // Contador dos cards exibidos
             $contador = 0;
 
-            function localizarImagem($pasta, $nomeArquivo)
-            {
-                $extensoes = [
-                    "png",
-                    "jpg",
-                    "jpeg",
-                    "webp",
-                    "avif",
-                    "gif"
-                ];
-
-                foreach ($extensoes as $ext) {
-
-                    $arquivo = "$pasta/$nomeArquivo.$ext";
-
-                    if (file_exists($arquivo)) {
-                        return $arquivo;
-                    }
-                }
-
-                return null;
-            }
-
             while ($jogo = pg_fetch_assoc($busca)) {
 
                 // Wide, Normal, Normal, Wide, Normal, Normal...
@@ -264,7 +241,7 @@ ORDER BY j.nome
     </main>
 
     <?php
-    require_once "rodape.php";
+    require_once __DIR__ . "/rodape.php";
     ?>
 
     <script src="script.js"></script>

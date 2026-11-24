@@ -284,29 +284,6 @@ ORDER BY j.nome
             // Contador dos cards exibidos
             $contador = 0;
 
-            function localizarImagem($pasta, $nomeArquivo)
-            {
-                $extensoes = [
-                    "png",
-                    "jpg",
-                    "jpeg",
-                    "webp",
-                    "avif",
-                    "gif"
-                ];
-
-                foreach ($extensoes as $ext) {
-
-                    $arquivo = "$pasta/$nomeArquivo.$ext";
-
-                    if (file_exists($arquivo)) {
-                        return $arquivo;
-                    }
-                }
-
-                return null;
-            }
-
             while ($jogo = pg_fetch_assoc($busca)) {
 
                 // Wide, Normal, Normal, Wide, Normal, Normal...
