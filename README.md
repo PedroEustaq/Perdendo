@@ -7,11 +7,12 @@
 
 </div>
 
+<img src="https://skillicons.dev/icons?i=php,supabase" width="150" alt="My Skills" />
+
 ----
 
 
 A Perdendo é uma loja fictícia de jogos virtuais, fiz ela estudando através do curso do gustavo guanabara de PHP,
-
 no curso aprendi muitos conceitos importantes como
 
 funcionamento de https,
@@ -34,6 +35,9 @@ O PHP é uma linguagem server-side, ou seja ela funciona do lado do servidor e _
 O navegador não recebe o código PHP em si, mas sim a resposta que o servidor produziu. Geralmente essa resposta é HTML, mas também pode ser JSON, texto e outros formatos.
 
 O PHP pode ser misturado com HTML dentro de um mesmo arquivo, permitindo criar páginas dinâmicas, onde o conteúdo muda de acordo com informações recebidas pelo servidor.
+
+<img src="readmeImg/image.png" width="250" alt="EclairWeb">
+
 
 ---
 
